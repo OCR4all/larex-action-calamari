@@ -12,7 +12,16 @@ authors = [
 ]
 requires-python = ">=3.12"
 dependencies = [
+    "calamari-ocr",
     "larex-action-sdk[fastapi]>=0.26.0",
+    "ocrd-fork-tfaip",
+    "paiargparse",
     "pydantic-settings>=2.16.0",
+    "tensorflow[and-cuda]==2.21.0",
     "uvicorn>=0.54.0",
 ]
+
+[tool.uv.sources]
+paiargparse = { url = "https://github.com/Calamari-OCR/paiargparse/archive/refs/heads/master.zip" }
+ocrd-fork-tfaip = { url = "https://github.com/Calamari-OCR/tfaip/archive/refs/heads/pypi-fork.zip" }
+calamari-ocr = { git = "https://github.com/Calamari-OCR/calamari", rev = "tf-keras" }
